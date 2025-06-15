@@ -25,6 +25,9 @@ void unsafe() {
 
     puts("Overflow me:");
     gets(buffer);  // Intentional vulnerability
+    
+    void *ret_addr = __builtin_return_address(0);
+    printf("Return address: %p\n", ret_addr);
 }
 
 int main() {
